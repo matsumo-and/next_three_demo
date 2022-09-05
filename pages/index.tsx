@@ -15,7 +15,7 @@ const Home: NextPage = () => {
     // サイズ
     const sizes = {
       width: innerWidth,
-      height: innerHeight
+      height: innerHeight,
     }
 
     // カメラ
@@ -23,14 +23,14 @@ const Home: NextPage = () => {
       75,
       sizes.width / sizes.height,
       0.1,
-      1000
+      1000,
     )
 
     // レンダラー
     const renderer = new THREE.WebGLRenderer({
       canvas: canvas || undefined,
       antialias: true,
-      alpha: true
+      alpha: true,
     })
     renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(window.devicePixelRatio)
@@ -38,7 +38,7 @@ const Home: NextPage = () => {
     // ボックスジオメトリー
     const boxGeometry = new THREE.BoxGeometry(1, 1, 1)
     const boxMaterial = new THREE.MeshLambertMaterial({
-      color: '#2497f0'
+      color: '#2497f0',
     })
     const box = new THREE.Mesh(boxGeometry, boxMaterial)
     box.position.z = -5
