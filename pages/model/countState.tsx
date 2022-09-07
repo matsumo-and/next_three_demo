@@ -5,11 +5,11 @@ export const countAtom = atom<number>({
   default: 60,
 })
 
-export const countSelector = selector<number>({
-  key: 'countSelector',
-  get: ({ get }) => {
-    // get()で任意のatomの値を取得
-    const count: number = get(countAtom)
-    return count || 60
-  },
-})
+// export const countSelector = selector<number>({
+//   key: 'countSelector',
+//   get: ({ get }) => {
+//     // get()で任意のatomの値を取得
+//     const count: number = get(countAtom)
+//     return count || 60
+//   },
+// })
