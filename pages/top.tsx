@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useRecoilState } from 'recoil'
 import styles from '../styles/Home.module.css'
 import { countAtom } from './model/countState'
@@ -8,12 +8,13 @@ import * as THREE from 'three'
 
 const Top: NextPage = () => {
 
-  let canvas: HTMLElement
+  const ref = useRef<HTMLElement | null>()
+
   useEffect(() => {
 
-    if (canvas) return
+    if (ref.current) return
     // canvasを取得
-    canvas = document.getElementById('canvas')!
+    ref.current = document.getElementById('canvas')
 
     // シーン
     const scene = new THREE.Scene()
