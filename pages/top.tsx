@@ -35,7 +35,7 @@ const Top: NextPage = () => {
 
     // レンダラー
     const renderer = new THREE.WebGLRenderer({
-      canvas: canvas || undefined,
+      canvas: ref.current || undefined,
       antialias: true,
       alpha: true
     })
